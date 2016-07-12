@@ -29,6 +29,15 @@ public class KMBombInfo : MonoBehaviour
     public delegate List<string> GetWidgetQueryResponsesHandler(string queryKey, string queryInfo);
     public GetWidgetQueryResponsesHandler WidgetQueryResponsesHandler;
 
+    public delegate bool KMIsBombPresent();
+    public KMIsBombPresent IsBombPresentHandler;
+
+    public delegate void KMBombSolvedDelegate();
+    public KMBombSolvedDelegate OnBombSolved;
+
+    public delegate void KMBombExplodedDelegate();
+    public KMBombSolvedDelegate OnBombExploded;
+
     public float GetTime()
     {
         if (TimeHandler != null)
@@ -101,5 +110,15 @@ public class KMBombInfo : MonoBehaviour
         }
 
         return new List<string>();
+    }
+
+    public bool IsBombPresent()
+    {
+        if (IsBombPresentHandler != null)
+        {
+            return IsBombPresentHandler();
+        }
+
+        return false;
     }
 }

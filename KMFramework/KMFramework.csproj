@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\KMDistraction.cs" />
     <Compile Include="src\KMWidget.cs" />
     <Compile Include="src\KMAudio.cs" />
     <Compile Include="src\KMBomb.cs" />
