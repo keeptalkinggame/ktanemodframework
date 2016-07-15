@@ -5,6 +5,8 @@
 /// </summary>
 public class KMNeedyModule : MonoBehaviour
 {
+    public float CountdownTime = 40f;
+
     public delegate void KMNeedyActivationEvent();
     public delegate void KMNeedyDeactivationEvent();
     public delegate void KMTimerExpiredEvent();
