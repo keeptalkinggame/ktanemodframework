@@ -1,27 +1,27 @@
 ﻿using UnityEngine;
 
-/*
- * This class acts as a proxy for the game's needy bomb module, don't subclass but instead add it as a component
- */
+/// <summary>
+/// This class acts as a proxy for the game's needy bomb module. Don't subclass but instead add it as a component.
+/// </summary>
 public class KMNeedyModule : MonoBehaviour
 {
     public delegate void KMNeedyActivationEvent();
     public delegate void KMNeedyDeactivationEvent();
     public delegate void KMTimerExpiredEvent();
 
-    /*
-     * Do not have your needy module start counting down until this activation happens
-     */
+    /// <summary>
+    /// Do not have your needy module start counting down until this activation happens.
+    /// </summary>
     public KMNeedyActivationEvent OnNeedyActivation;
 
-    /*
-     * This is usually when the bomb has been solved or has exploded, you'll need to stop your countdown
-     */
+    /// <summary>
+    /// This is usually when the bomb has been solved or has exploded. You will need to stop your countdown.
+    /// </summary>
     public KMNeedyDeactivationEvent OnNeedyDeactivation;
 
-    /*
-     * Handle when timer runs out, usually by giving a strike
-     */
+    /// <summary>
+    /// Handle when timer runs out, usually by giving a strike.
+    /// </summary>
     public KMTimerExpiredEvent OnTimerExpired;
 
     /// <summary>

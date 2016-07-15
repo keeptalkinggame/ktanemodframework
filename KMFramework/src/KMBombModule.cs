@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-/*
- * This class acts as a proxy for the game's bomb module, don't subclass but instead 
- */
+/// <summary>
+/// This class acts as a proxy for the game's needy bomb module. Don't subclass but instead add it as a component.
+/// </summary>
 public class KMBombModule : MonoBehaviour
 {
     
