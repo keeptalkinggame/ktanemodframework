@@ -28,6 +28,11 @@ public class KMNeedyModule : MonoBehaviour
     public bool RequiresTimerVisibility;
 
     /// <summary>
+    /// Set to true if you want the needy module to make audio warnings when time goes below 5 seconds
+    /// </summary>
+    public bool WarnAtFiveSeconds = true;
+
+    /// <summary>
     /// Do not have your needy module start counting down until this activation happens.
     /// </summary>
     public KMNeedyActivationEvent OnNeedyActivation;
@@ -83,6 +88,33 @@ public class KMNeedyModule : MonoBehaviour
         return -1;
     }
 
+    /// <summary>
+    /// Sets the time remaining, this will have no effect if timer isn't active
+    /// </summary>
+    /// <returns></returns>
+    public void SetNeedyTimeRemaining(float newTime)
+    {
+        if(SetNeedyTimeRemainingHandler != null)
+        {
+            SetNeedyTimeRemainingHandler(newTime);
+        }
+    }
+
+    /// <summary>
+    /// Gets the time remaining, this will return -1f if not active
+    /// </summary>
+    /// <returns></returns>
+    public float GetNeedyTimeRemaining()
+    {
+        if (GetNeedyTimeRemainingHandler != null)
+        {
+            return GetNeedyTimeRemainingHandler();
+        }
+
+        return -1f;
+    }
+
+
     #region Delegates
     public delegate void KMNeedyActivationEvent();
     public delegate void KMNeedyDeactivationEvent();
@@ -95,6 +127,9 @@ public class KMNeedyModule : MonoBehaviour
     public delegate void KMModuleDeactivateEvent();
 
     public delegate int KMRuleGenerationSeedDelegate();
+
+    public delegate float KMGetNeedyTimeRemainingDelegate();
+    public delegate void KMSetNeedyTimeRemainingDelegate(float newTime);
     #endregion
 
     #region DO NOT USE IN MOD
@@ -112,5 +147,15 @@ public class KMNeedyModule : MonoBehaviour
     /// DO NOT USE IN MOD. Used by the game to hook into the bomb.
     /// </summary>
     public KMRuleGenerationSeedDelegate GetRuleGenerationSeedHandler;
+
+    /// <summary>
+    /// DO NOT USE IN MOD. Used by the game to hook into the bomb.
+    /// </summary>
+    public KMGetNeedyTimeRemainingDelegate GetNeedyTimeRemainingHandler;
+
+    /// <summary>
+    /// DO NOT USE IN MOD. Used by the game to hook into the bomb.
+    /// </summary>
+    public KMSetNeedyTimeRemainingDelegate SetNeedyTimeRemainingHandler;
     #endregion
 }
