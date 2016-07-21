@@ -5,26 +5,10 @@
 /// </summary>
 public class KMNeedyModule : MonoBehaviour
 {
+    /// <summary>
+    /// The amount of time on the needy timer whenever this module is activated.
+    /// </summary>
     public float CountdownTime = 40f;
-
-    public delegate void KMNeedyActivationEvent();
-    public delegate void KMNeedyDeactivationEvent();
-    public delegate void KMTimerExpiredEvent();
-
-    /// <summary>
-    /// Do not have your needy module start counting down until this activation happens.
-    /// </summary>
-    public KMNeedyActivationEvent OnNeedyActivation;
-
-    /// <summary>
-    /// This is usually when the bomb has been solved or has exploded. You will need to stop your countdown.
-    /// </summary>
-    public KMNeedyDeactivationEvent OnNeedyDeactivation;
-
-    /// <summary>
-    /// Handle when timer runs out, usually by giving a strike.
-    /// </summary>
-    public KMTimerExpiredEvent OnTimerExpired;
 
     /// <summary>
     /// The identifier for the module as referenced in missions. e.g. "BigButton"
@@ -43,24 +27,29 @@ public class KMNeedyModule : MonoBehaviour
     /// </summary>
     public bool RequiresTimerVisibility;
 
-    public delegate bool KMPassEvent();
-    public delegate bool KMStrikeEvent();
+    /// <summary>
+    /// Do not have your needy module start counting down until this activation happens.
+    /// </summary>
+    public KMNeedyActivationEvent OnNeedyActivation;
 
-    public delegate void KMModuleActivateEvent();
-    public delegate void KMModuleDeactivateEvent();
+    /// <summary>
+    /// This is usually when the bomb has been solved or has exploded. You will need to stop your countdown.
+    /// </summary>
+    public KMNeedyDeactivationEvent OnNeedyDeactivation;
 
-    public delegate int KMRuleGenerationSeedDelegate();
+    /// <summary>
+    /// Handle when timer runs out, usually by giving a strike.
+    /// </summary>
+    public KMTimerExpiredEvent OnTimerExpired;
 
-    //DO NOT USE IN MOD, Used by the game to hook into the bomb
-    public KMStrikeEvent OnStrike;
-    public KMPassEvent OnPass;
-    public KMRuleGenerationSeedDelegate GetRuleGenerationSeedHandler;
-
-    //Used by the mod, hook into these to properly activate and deactivate your custom module
+    /// <summary>
+    /// Event is fired when the bomb has been activated and the timer has started.
+    /// </summary>
     public KMModuleActivateEvent OnActivate;
-    public KMModuleDeactivateEvent OnDeactivate;
 
-    //Call this when the entire module is solved
+    /// <summary>
+    /// Call this when the needy module has been correctly satisified and should be temporarily put to rest.
+    /// </summary>
     public void HandlePass()
     {
         if (OnPass != null)
@@ -69,7 +58,9 @@ public class KMNeedyModule : MonoBehaviour
         }
     }
 
-    //Call this on any mistake that you want to cause a bomb strike
+    /// <summary>
+    /// Call this on any mistake that you want to cause a bomb strike.
+    /// </summary>
     public void HandleStrike()
     {
         if (OnStrike != null)
@@ -78,6 +69,10 @@ public class KMNeedyModule : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Returns the random seed used to generate the rules for this game. Not currently used.
+    /// </summary>
+    /// <returns></returns>
     public int GetRuleGenerationSeed()
     {
         if (GetRuleGenerationSeedHandler != null)
@@ -87,4 +82,35 @@ public class KMNeedyModule : MonoBehaviour
 
         return -1;
     }
+
+    #region Delegates
+    public delegate void KMNeedyActivationEvent();
+    public delegate void KMNeedyDeactivationEvent();
+    public delegate void KMTimerExpiredEvent();
+
+    public delegate bool KMPassEvent();
+    public delegate bool KMStrikeEvent();
+
+    public delegate void KMModuleActivateEvent();
+    public delegate void KMModuleDeactivateEvent();
+
+    public delegate int KMRuleGenerationSeedDelegate();
+    #endregion
+
+    #region DO NOT USE IN MOD
+    /// <summary>
+    /// DO NOT USE IN MOD. Used by the game to hook into the bomb.
+    /// </summary>
+    public KMStrikeEvent OnStrike;
+
+    /// <summary>
+    /// DO NOT USE IN MOD. Used by the game to hook into the bomb.
+    /// </summary>
+    public KMPassEvent OnPass;
+
+    /// <summary>
+    /// DO NOT USE IN MOD. Used by the game to hook into the bomb.
+    /// </summary>
+    public KMRuleGenerationSeedDelegate GetRuleGenerationSeedHandler;
+    #endregion
 }

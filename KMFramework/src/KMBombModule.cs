@@ -22,24 +22,14 @@ public class KMBombModule : MonoBehaviour
     /// </summary>
     public bool RequiresTimerVisibility;
 
-    public delegate bool KMPassEvent();
-    public delegate bool KMStrikeEvent();
-
-    public delegate void KMModuleActivateEvent();
-    public delegate void KMModuleDeactivateEvent();
-
-    public delegate int KMRuleGenerationSeedDelegate();
-
-    //DO NOT USE IN MOD, Used by the game to hook into the bomb
-    public KMStrikeEvent OnStrike;
-    public KMPassEvent OnPass;
-    public KMRuleGenerationSeedDelegate GetRuleGenerationSeedHandler;
-
-    //Used by the mod, hook into these to properly activate and deactivate your custom module
+    /// <summary>
+    /// Event is fired when the bomb has been activated and the timer has started.
+    /// </summary>
     public KMModuleActivateEvent OnActivate;
-    public KMModuleDeactivateEvent OnDeactivate;
 
-    //Call this when the entire module is solved
+    /// <summary>
+    /// Call this when the entire module has been solved.
+    /// </summary>
     public void HandlePass()
     {
         if (OnPass != null)
@@ -48,7 +38,9 @@ public class KMBombModule : MonoBehaviour
         }
     }
 
-    //Call this on any mistake that you want to cause a bomb strike
+    /// <summary>
+    /// Call this on any mistake that you want to cause a bomb strike.
+    /// </summary>
     public void HandleStrike()
     {
         if (OnStrike != null)
@@ -57,6 +49,10 @@ public class KMBombModule : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Returns the random seed used to generate the rules for this game. Not currently used.
+    /// </summary>
+    /// <returns></returns>
     public int GetRuleGenerationSeed()
     {
         if (GetRuleGenerationSeedHandler != null)
@@ -66,4 +62,29 @@ public class KMBombModule : MonoBehaviour
 
         return -1;
     }
+
+    #region Delegates
+    public delegate bool KMPassEvent();
+    public delegate bool KMStrikeEvent();
+
+    public delegate void KMModuleActivateEvent();
+    public delegate void KMModuleDeactivateEvent();
+
+    public delegate int KMRuleGenerationSeedDelegate();
+    #endregion
+
+    #region DO NOT USE IN MOD
+    /// <summary>
+    /// DO NOT USE IN MOD. Used by the game to hook into the bomb.
+    /// </summary>
+    public KMStrikeEvent OnStrike;
+    /// <summary>
+    /// DO NOT USE IN MOD. Used by the game to hook into the bomb.
+    /// </summary>
+    public KMPassEvent OnPass;
+    /// <summary>
+    /// DO NOT USE IN MOD. Used by the game to hook into the bomb.
+    /// </summary>
+    public KMRuleGenerationSeedDelegate GetRuleGenerationSeedHandler;
+    #endregion
 }
