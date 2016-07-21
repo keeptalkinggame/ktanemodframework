@@ -19,6 +19,14 @@ public class KMGeneratorSetting
     [Tooltip("Time, in seconds, which must elapse before any unactivated Needy modules are automatically activated.")]
     public int TimeBeforeNeedyActivation;
 
+    /// <summary>
+    /// Force modules to be placed only on the front face. By default this will limit the module count to 5 (+1 for the timer).
+    /// Useful in rare circumstances where you wish to generate a bomb with a few modules and guarantee that they will all
+    /// be visibile simultaneously.
+    /// </summary>
+    [Tooltip("Force modules to be placed only on the front face.")]
+    public bool FrontFaceOnly;
+
     //All module pools will be used when generating a bomb
     public List<KMComponentPool> ComponentPools;
 

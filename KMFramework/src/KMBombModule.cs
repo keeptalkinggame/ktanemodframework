@@ -5,7 +5,6 @@
 /// </summary>
 public class KMBombModule : MonoBehaviour
 {
-    
     /// <summary>
     /// The identifier for the module as referenced in missions. e.g. "BigButton"
     /// </summary>
@@ -15,6 +14,13 @@ public class KMBombModule : MonoBehaviour
     /// The nice display name shown to players. e.g. "The Button"
     /// </summary>
     public string ModuleDisplayName;
+
+    /// <summary>
+    /// Set to true to only allow this module to be placed on the same face as the timer. 
+    /// Useful when the rules involve the timer in some way (like the Big Button), but should be used sparingly
+    /// as it limits generation possibilities.
+    /// </summary>
+    public bool RequiresTimerVisibility;
 
     public delegate bool KMPassEvent();
     public delegate bool KMStrikeEvent();

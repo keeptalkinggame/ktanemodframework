@@ -36,6 +36,13 @@ public class KMNeedyModule : MonoBehaviour
     /// </summary>
     public string ModuleDisplayName;
 
+    /// <summary>
+    /// Set to true to only allow this module to be placed on the same face as the timer. 
+    /// Useful when the rules involve the timer in some way (like the Big Button), but should be used sparingly
+    /// as it limits generation possibilities.
+    /// </summary>
+    public bool RequiresTimerVisibility;
+
     public delegate bool KMPassEvent();
     public delegate bool KMStrikeEvent();
 
