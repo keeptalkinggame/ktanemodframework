@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System;
 
+/// <summary>
+/// The interface to all interactive elements in the game. Set this up to allow an object to be
+/// selected, interacted with, and handle input.
+/// </summary>
 public class KMSelectable : MonoBehaviour
 {
     public delegate bool OnInteractHandler();

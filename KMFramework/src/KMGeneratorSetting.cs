@@ -10,12 +10,21 @@ using UnityEngine;
 [Serializable]
 public class KMGeneratorSetting
 {
-    [Tooltip("Initial value for the timer when the bomb is activated.")]
+    /// <summary>
+    /// Initial value for the timer when the bomb is activated, in seconds.
+    /// </summary>
+    [Tooltip("Initial value for the timer when the bomb is activated, in seconds.")]
     public float TimeLimit;
 
+    /// <summary>
+    /// The number of strikes at which the bomb explodes. Hardcore is 1. More forgiving is 3.
+    /// </summary>
     [Tooltip("The number of strikes at which the bomb explodes")]
     public int NumStrikes;
 
+    /// <summary>
+    /// Time, in seconds, which must elapse before any unactivated Needy modules are automatically activated.
+    /// </summary>
     [Tooltip("Time, in seconds, which must elapse before any unactivated Needy modules are automatically activated.")]
     public int TimeBeforeNeedyActivation;
 
@@ -27,7 +36,9 @@ public class KMGeneratorSetting
     [Tooltip("Force modules to be placed only on the front face.")]
     public bool FrontFaceOnly;
 
-    //All module pools will be used when generating a bomb
+    /// <summary>
+    /// The pools of modules that will be used when generating a bomb.
+    /// </summary>
     public List<KMComponentPool> ComponentPools;
 
     public KMGeneratorSetting()
@@ -38,6 +49,7 @@ public class KMGeneratorSetting
         TimeBeforeNeedyActivation = 90;
     }
 
+    /// <returns>The total count of modules that will be added according to the component pools.</returns>
     public int GetComponentCount()
     {
         int count = 0;

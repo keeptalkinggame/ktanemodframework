@@ -1,5 +1,9 @@
 using UnityEngine;
 
+/// <summary>
+/// Add this component to a prefab to specify an AudioClip that should be played whenever the
+/// given sound effect is triggered instead of the original game's audio.
+/// </summary>
 public class KMSoundOverride : MonoBehaviour
 {
     public enum SoundEffect
@@ -42,6 +46,13 @@ public class KMSoundOverride : MonoBehaviour
         NeedyWarning
     };
 
+    /// <summary>
+    /// The sound effect in the base game to replace.
+    /// </summary>
     public SoundEffect OverrideEffect;
+
+    /// <summary>
+    /// The AudioClip to be played instead of the base game's sound.
+    /// </summary>
     public AudioClip AudioClip;
 }

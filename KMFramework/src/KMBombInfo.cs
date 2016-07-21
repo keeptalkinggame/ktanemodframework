@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
+/// <summary>
+/// Interface to information about the bomb and its widgets. 
+/// Add this component to a module to query properties of the bomb for use in rules.
+/// </summary>
 public class KMBombInfo : MonoBehaviour
 {
     public static string QUERYKEY_GET_SERIAL_NUMBER = "serial";
@@ -38,6 +42,7 @@ public class KMBombInfo : MonoBehaviour
     public delegate void KMBombExplodedDelegate();
     public KMBombSolvedDelegate OnBombExploded;
 
+    /// <returns>Time remaining on the bomb, in seconds.</returns>
     public float GetTime()
     {
         if (TimeHandler != null)
@@ -62,6 +67,7 @@ public class KMBombInfo : MonoBehaviour
         return string.Empty;
     }
 
+    /// <returns>The number of strikes received by the player this round.</returns>
     public int GetStrikes()
     {
         if (StrikesHandler != null)
@@ -72,6 +78,7 @@ public class KMBombInfo : MonoBehaviour
         return -1;
     }
 
+    /// <returns>A list of the module names on the current bomb.</returns>
     public List<string> GetModuleNames()
     {
         if (ModuleNamesHandler != null)
@@ -82,6 +89,7 @@ public class KMBombInfo : MonoBehaviour
         return new List<string>();
     }
 
+    /// <returns>A list of the solvable module names on the current bomb.</returns>
     public List<string> GetSolvableModuleNames()
     {
         if (SolvableModuleNamesHandler != null)
@@ -92,6 +100,7 @@ public class KMBombInfo : MonoBehaviour
         return new List<string>();
     }
 
+    /// <returns>A list of the solved module names on the current bomb.</returns>
     public List<string> GetSolvedModuleNames()
     {
         if (SolvedModuleNamesHandler != null)
@@ -102,6 +111,16 @@ public class KMBombInfo : MonoBehaviour
         return new List<string>();
     }
 
+    /// <summary>
+    /// Query all widgets on the bomb using the given queryKey. Use this to get information about things like battery count, indicator labels, or
+    /// custom information from mod widgets.
+    /// 
+    /// Be sure to consider all responses when using this information in your rules, as there may be more than one instance of a widget and thus
+    /// more than one valid response.
+    /// </summary>
+    /// <param name="queryKey"></param>
+    /// <param name="queryInfo"></param>
+    /// <returns>A list of response strings from all widgets.</returns>
     public List<string> QueryWidgets(string queryKey, string queryInfo)
     {
         if (WidgetQueryResponsesHandler != null)
@@ -112,6 +131,7 @@ public class KMBombInfo : MonoBehaviour
         return new List<string>();
     }
 
+    /// <returns>True if there is a bomb present. This will not be the case during non-gameplay scenes.</returns>
     public bool IsBombPresent()
     {
         if (IsBombPresentHandler != null)

@@ -1,8 +1,19 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// A proxy for the game's Widget class, which is a non-interactive, but queryable, element that can be added around the bombs. Don't subclass but instead add it as a component.
+/// E.g. serial number, indicator light, ports. 
+/// </summary>
 public class KMWidget : MonoBehaviour
 {
+    /// <summary>
+    /// The horizontal size of the widget. Usually 1 or 2 units.
+    /// </summary>
     public int SizeX;
+
+    /// <summary>
+    /// The vertical size of the widget. Usually 1 or 2 units.
+    /// </summary>
     public int SizeZ;
 
     public delegate void KMWidgetActivateDelegate();
