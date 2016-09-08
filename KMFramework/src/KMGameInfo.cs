@@ -18,9 +18,9 @@ public class KMGameInfo : MonoBehaviour
     public delegate void KMAlarmClockChangeDelegate(bool on);
 
     /// <summary>
-    /// Delegate type for change in lights in the gameplay room
+    /// Delegate type for change in lights
     /// </summary>
-    public delegate void KMGameplayLightsChangeDelegate(bool on);
+    public delegate void KMLightsChangeDelegate(bool on);
 
     /// <summary>
     /// Called when game state changes between gameplay, setup, postgame and loading
@@ -28,12 +28,12 @@ public class KMGameInfo : MonoBehaviour
     public KMStateChangeDelegate OnStateChange;
 
     /// <summary>
-    /// Called when game state changes between gameplay, setup, postgame and loading
+    /// Called when alarm clock turns on or off
     /// </summary>
     public KMAlarmClockChangeDelegate OnAlarmClockChange;
 
     /// <summary>
-    /// Called when game state changes between gameplay, setup, postgame and loading
+    /// Called when in game lights change state
     /// </summary>
-    public KMGameplayLightsChangeDelegate OnGameplayLightsChange;
+    public KMLightsChangeDelegate OnLightsChange;
 }
