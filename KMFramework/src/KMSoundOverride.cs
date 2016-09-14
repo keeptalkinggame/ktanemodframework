@@ -55,4 +55,9 @@ public class KMSoundOverride : MonoBehaviour
     /// The AudioClip to be played instead of the base game's sound.
     /// </summary>
     public AudioClip AudioClip;
+
+    /// <summary>
+    /// If you want to provide additional variants that will be chosen randomly to play for this override
+    /// </summary>
+    public AudioClip[] AdditionalVariants;
 }
