@@ -104,4 +104,29 @@ public class KMSelectable : MonoBehaviour
     /// Determines whether gamepad selection should wrap around up/down
     /// </summary>
     public bool AllowSelectionWrapY = false;
+
+    /// <summary>
+    /// Adds bomb movement and controller vibration on interaction, amount is based on the modifier
+    /// </summary>
+    public void AddInteractionPunch(float intensityModifier = 1.0f)
+    {
+        if(OnInteractionPunch != null)
+        {
+            OnInteractionPunch(intensityModifier);
+        }
+    }
+
+    #region Delegates
+    /// <summary>
+    /// Delegate type for adding bomb movement and controller vibration on interaction
+    /// </summary>
+    public delegate void KMOnAddInteractionPunchDelegate(float intensityModifier = 1.0f);
+    #endregion
+
+    #region DO NOT USE IN MOD
+    /// <summary>
+    /// DO NOT USE IN MOD. Used by the game to hook into the selectable.
+    /// </summary>
+    public KMOnAddInteractionPunchDelegate OnInteractionPunch;
+    #endregion
 }
