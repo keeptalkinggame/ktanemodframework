@@ -116,6 +116,18 @@ public class KMSelectable : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Forces highlight to be selection highlight, this is yellow in game
+    /// Should be used when interaction will drill down to child selectables
+    /// </summary>
+    public bool ForceSelectionHighlight = false;
+
+    /// <summary>
+    /// Forces highlight to be interaction highlight, this is red in game
+    /// Should be used when interaction will trigger a behavior
+    /// </summary>
+    public bool ForceInteractionHighlight = false;
+
     #region Delegates
     /// <summary>
     /// Delegate type for adding bomb movement and controller vibration on interaction
