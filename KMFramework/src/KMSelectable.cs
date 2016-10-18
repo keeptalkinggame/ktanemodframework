@@ -117,6 +117,18 @@ public class KMSelectable : MonoBehaviour
     }
 
     /// <summary>
+    /// Notifies the game that the children list has been updated
+    /// Selects the child specified as the current selectable
+    /// </summary>
+    public void UpdateChildren(KMSelectable childToSelect = null)
+    {
+        if (OnUpdateChildren != null)
+        {
+            OnUpdateChildren(childToSelect);
+        }
+    }
+
+    /// <summary>
     /// Forces highlight to be selection highlight, this is yellow in game
     /// Should be used when interaction will drill down to child selectables
     /// </summary>
@@ -133,6 +145,11 @@ public class KMSelectable : MonoBehaviour
     /// Delegate type for adding bomb movement and controller vibration on interaction
     /// </summary>
     public delegate void KMOnAddInteractionPunchDelegate(float intensityModifier = 1.0f);
+    
+    /// <summary>
+    /// Delegate type for updating the children map
+    /// </summary>
+    public delegate void KMOnUpdateChildrenDelegate(KMSelectable childToSelect = null);
     #endregion
 
     #region DO NOT USE IN MOD
@@ -140,5 +157,6 @@ public class KMSelectable : MonoBehaviour
     /// DO NOT USE IN MOD. Used by the game to hook into the selectable.
     /// </summary>
     public KMOnAddInteractionPunchDelegate OnInteractionPunch;
+    public KMOnUpdateChildrenDelegate OnUpdateChildren;
     #endregion
 }
