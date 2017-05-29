@@ -40,7 +40,7 @@ public class KMBombInfo : MonoBehaviour
     public KMBombSolvedDelegate OnBombSolved;
 
     public delegate void KMBombExplodedDelegate();
-    public KMBombSolvedDelegate OnBombExploded;
+    public KMBombExplodedDelegate OnBombExploded;
 
     /// <returns>Time remaining on the bomb, in seconds.</returns>
     public float GetTime()
