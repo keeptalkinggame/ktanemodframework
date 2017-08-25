@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\KMGamepad.cs" />
+    <Compile Include="src\KMHoldable.cs" />
     <Compile Include="src\KMMaterialInfo.cs" />
     <Compile Include="src\KMComponentPool.cs" />
     <Compile Include="src\KMGeneratorSetting.cs" />

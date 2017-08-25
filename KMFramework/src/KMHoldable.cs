@@ -1,14 +1,12 @@
 ﻿using UnityEngine;
 using System;
 
+/// <summary>
+/// Interface to define a holdable object that can be picked up by motion controls
+/// Should add a rigidbody or a default one will be created
+/// </summary>
 public class KMHoldable : MonoBehaviour
 {
-    public Action OnHold;
-    public Action OnHoldAnimationComplete;
 
-    public Action OnLetGo;
-    public Action OnLetGoAnimationComplete;
-
-    public float FocusDistance = 0.63f;
 }
 
