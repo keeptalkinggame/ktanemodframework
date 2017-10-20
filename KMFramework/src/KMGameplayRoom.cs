@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 /// <summary>
 /// Add this component to a prefab to allow it to be used as a room during gameplay (i.e. bomb defusal).

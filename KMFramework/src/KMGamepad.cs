@@ -30,7 +30,7 @@ public class KMGamepad :MonoBehaviour
     /// </summary>
     public bool GetButtonDown(ButtonEnum button, int controller = 0)
     {
-        if (OnGetAxisValue != null)
+        if (OnGetButtonDown != null)
         {
             return OnGetButtonDown(button, controller);
         }
@@ -43,7 +43,7 @@ public class KMGamepad :MonoBehaviour
     /// </summary>
     public bool GetButtonUp(ButtonEnum button, int controller = 0)
     {
-        if (OnGetAxisValue != null)
+        if (OnGetButtonUp != null)
         {
             return OnGetButtonUp(button, controller);
         }
