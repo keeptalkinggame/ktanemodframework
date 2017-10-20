@@ -37,6 +37,12 @@ public class KMGeneratorSetting
     public bool FrontFaceOnly;
 
     /// <summary>
+    /// Set how many optional widgets (widgets other than serial number) that should be placed on the bomb
+    /// </summary>
+    [Tooltip("How many optional widgets should be placed on the bomb")]
+    public int OptionalWidgetCount;
+
+    /// <summary>
     /// The pools of modules that will be used when generating a bomb.
     /// </summary>
     public List<KMComponentPool> ComponentPools;
@@ -47,6 +53,7 @@ public class KMGeneratorSetting
         NumStrikes = 3;
         TimeLimit = 300;
         TimeBeforeNeedyActivation = 90;
+        OptionalWidgetCount = 5;
     }
 
     /// <returns>The total count of modules that will be added according to the component pools.</returns>
