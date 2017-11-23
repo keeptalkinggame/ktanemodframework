@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 /// <summary>
 /// Generic room behaviour - use KMGameplayRoom or KMSetupRoom instead.
@@ -29,4 +30,9 @@ public class KMRoom : MonoBehaviour
     /// Set this to true to enable realtime shadows at high quality.
     /// </summary>
     public bool UseModQualitySettings = true;
+
+    /// <summary>
+    /// A list of transforms where mod holdables can be spawned
+    /// </summary>
+    public List<Transform> HoldableSpawnPoints;
 }

@@ -14,4 +14,9 @@ public class KMSetupRoom : KMRoom
     /// Transform at which the Bomb Binder should be spawned.
     /// </summary>
     public Transform BombBinderSpawn;
+
+    /// <summary>
+    /// The spawn location for the mod manager holdable
+    /// </summary>
+    public Transform ModManagerHoldableSpawn;
 }
