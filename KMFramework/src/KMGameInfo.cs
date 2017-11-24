@@ -107,6 +107,20 @@ public class KMGameInfo : MonoBehaviour
         return 11;
     }
 
+    /// <summary>
+    /// Gets the maximum number of bomb modules that can be placed based on which cases are available and only front face is available
+    /// </summary>
+    /// <returns>The maximum number of bomb modules that can be placed on the front face of any bomb</returns>
+    public int GetMaximumModulesFrontFace()
+    {
+        if (OnGetMaximumModulesFrontFace != null)
+        {
+            return OnGetMaximumModulesFrontFace();
+        }
+
+        return 5;
+    }
+
     #region Delegates
     /// <summary>
     /// Delegate type for state changes
@@ -132,6 +146,11 @@ public class KMGameInfo : MonoBehaviour
     /// Delegate type for getting the total number of modules that can be placed
     /// </summary>
     public delegate int KMGetMaximumBombModulesDelgate();
+
+    /// <summary>
+    /// Delegate type for getting the total number of modules that can be placed on a front face
+    /// </summary>
+    public delegate int KMGetMaximumModulesFrontFaceDelgate();
     #endregion
 
     #region DO NOT USE IN MOD
@@ -143,5 +162,9 @@ public class KMGameInfo : MonoBehaviour
     /// DO NOT USE IN MOD. Used by the game for getting the total number of modules that can be placed
     /// </summary>
     public KMGetMaximumBombModulesDelgate OnGetMaximumBombModules;
+    /// <summary>
+    /// DO NOT USE IN MOD. Used by the game for getting the total number of modules that can be placed on a front face
+    /// </summary>
+    public KMGetMaximumModulesFrontFaceDelgate OnGetMaximumModulesFrontFace;
     #endregion
 }
