@@ -73,6 +73,7 @@
     <Compile Include="src\KMSetupRoom.cs" />
     <Compile Include="src\KMSoundOverride.cs" />
     <Compile Include="src\KMStatusLightParent.cs" />
+    <Compile Include="src\KMHoldableSpawnPoint.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

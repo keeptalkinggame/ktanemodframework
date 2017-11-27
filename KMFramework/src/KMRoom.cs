@@ -34,5 +34,5 @@ public class KMRoom : MonoBehaviour
     /// <summary>
     /// A list of transforms where mod holdables can be spawned
     /// </summary>
-    public List<Transform> HoldableSpawnPoints;
+    public List<KMHoldableSpawnPoint> HoldableSpawnPoints;
 }
