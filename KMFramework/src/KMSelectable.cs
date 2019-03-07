@@ -55,12 +55,14 @@ public class KMSelectable : MonoBehaviour
     public int DefaultSelectableIndex = 0;
 
     /// <summary>
-    /// Called whenever this selectable becomes the current selection
+    /// Called whenever this selectable becomes the current selectable.
+    /// CAUTION This behaves unintuitively, probably better to use OnHighlight or OnFocus instead
     /// </summary>
     public Action OnSelect;
 
     /// <summary>
     /// Called whenever this selectable stops being the current selectable
+    /// CAUTION This behaves unintuitively, probably better to use OnHighlightEnded or OnDefocus instead
     /// </summary>
     public Action OnDeselect;
 
@@ -84,6 +86,21 @@ public class KMSelectable : MonoBehaviour
     /// Called when the highlight is turned on, OnSelect is probably more appropriate for most things
     /// </summary>
     public Action OnHighlight;
+
+    /// <summary>
+    /// Called when the highlight is turned off
+    /// </summary>
+    public Action OnHighlightEnded;
+
+    /// <summary>
+    /// Called when a module is focused, this is when it is interacted with from the bomb face level and this module's children can be selected
+    /// </summary>
+    public Action OnFocus;
+
+    /// <summary>
+    /// Called when a module is defocused, this is when a different selectable becomes the focus or the module has been backed out of
+    /// </summary>
+    public Action OnDefocus;
 
     /// <summary>
     /// Called when player pulls selection stick left while this selectable is focused
