@@ -47,7 +47,7 @@ public class KMGameInfo : MonoBehaviour
         /// </summary>
         public string DisplayName;
         /// <summary>
-        /// The id of the module
+        /// The ModuleType of the module (for mod modules) or the ComponentType (for base game modules)
         /// </summary>
         public string ModuleId;
         /// <summary>

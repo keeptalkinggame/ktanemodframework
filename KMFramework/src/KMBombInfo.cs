@@ -30,6 +30,15 @@ public class KMBombInfo : MonoBehaviour
     public delegate List<string> GetSolvedModuleNamesHandler();
     public GetSolvedModuleNamesHandler SolvedModuleNamesHandler;
 
+    public delegate List<string> GetModuleIDsHandler();
+    public GetModuleIDsHandler ModuleIDsHandler;
+
+    public delegate List<string> GetSolvableModuleIDsHandler();
+    public GetSolvableModuleIDsHandler SolvableModuleIDsHandler;
+
+    public delegate List<string> GetSolvedModuleIDsHandler();
+    public GetSolvedModuleIDsHandler SolvedModuleIDsHandler;
+
     public delegate List<string> GetWidgetQueryResponsesHandler(string queryKey, string queryInfo);
     public GetWidgetQueryResponsesHandler WidgetQueryResponsesHandler;
 
@@ -78,6 +87,7 @@ public class KMBombInfo : MonoBehaviour
         return -1;
     }
 
+
     /// <returns>A list of the module names on the current bomb.</returns>
     public List<string> GetModuleNames()
     {
@@ -110,6 +120,39 @@ public class KMBombInfo : MonoBehaviour
 
         return new List<string>();
     }
+
+    /// <returns>A list of the module IDs on the current bomb. A module ID is "ModuleType" for mod modules and a ComponentType string for base game modules.</returns>
+    public List<string> GetModuleIDs()
+    {
+        if (ModuleIDsHandler != null)
+        {
+            return ModuleIDsHandler();
+        }
+
+        return new List<string>();
+    }
+    /// <returns>A list of the solvable module IDs on the current bomb. A module ID is "ModuleType" for mod modules and a ComponentType string for base game modules.</returns>
+    public List<string> GetSolvableModuleIDs()
+    {
+        if (SolvableModuleNamesHandler != null)
+        {
+            return SolvableModuleIDsHandler();
+        }
+
+        return new List<string>();
+    }
+
+    /// <returns>A list of the solved module IDs on the current bomb. A module ID is "ModuleType" for mod modules and a ComponentType string for base game modules.</returns>
+    public List<string> GetSolvedModuleIDs()
+    {
+        if (SolvedModuleNamesHandler != null)
+        {
+            return SolvedModuleIDsHandler();
+        }
+
+        return new List<string>();
+    }
+
 
     /// <summary>
     /// Query all widgets on the bomb using the given queryKey. Use this to get information about things like battery count, indicator labels, or

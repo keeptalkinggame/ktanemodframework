@@ -174,6 +174,9 @@ public class KMSelectable : MonoBehaviour
     /// DO NOT USE IN MOD. Used by the game to hook into the selectable.
     /// </summary>
     public KMOnAddInteractionPunchDelegate OnInteractionPunch;
+    /// <summary>
+    /// DO NOT USE IN MOD. Used by the game to hook into the selectable.
+    /// </summary>
     public KMOnUpdateChildrenDelegate OnUpdateChildren;
     #endregion
 }

@@ -7,6 +7,7 @@ public class KMBombModule : MonoBehaviour
 {
     /// <summary>
     /// The identifier for the module as referenced in missions. e.g. "BigButton"
+    /// Also known as a "Module ID".
     /// </summary>
     public string ModuleType;
 
