@@ -5,6 +5,7 @@ using System.Collections.Generic;
 /// Interface to information about the bomb and its widgets. 
 /// Add this component to a module to query properties of the bomb for use in rules.
 /// </summary>
+[DisallowMultipleComponent]
 public class KMBombInfo : MonoBehaviour
 {
     public static string QUERYKEY_GET_SERIAL_NUMBER = "serial";

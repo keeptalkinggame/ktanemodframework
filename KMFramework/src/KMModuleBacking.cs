@@ -4,6 +4,7 @@
 /// Visual models of the foam behind modules. Modules that have holes or recesses can have parts of this
 /// visible.
 /// </summary>
+[DisallowMultipleComponent]
 public class KMModuleBacking : MonoBehaviour
 {
     /// <summary>

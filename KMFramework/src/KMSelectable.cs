@@ -5,6 +5,7 @@ using System;
 /// The interface to all interactive elements in the game. Set this up to allow an object to be
 /// selected, interacted with, and handle input.
 /// </summary>
+[DisallowMultipleComponent]
 public class KMSelectable : MonoBehaviour
 {
     /// <summary>

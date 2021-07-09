@@ -4,6 +4,7 @@
 /// A proxy for the game's Widget class, which is a non-interactive, but queryable, element that can be added around the bombs. Don't subclass but instead add it as a component.
 /// E.g. serial number, indicator light, ports. 
 /// </summary>
+[DisallowMultipleComponent]
 public class KMWidget : MonoBehaviour
 {
     /// <summary>

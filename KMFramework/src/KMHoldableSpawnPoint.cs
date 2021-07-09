@@ -4,6 +4,7 @@ using System.Collections;
 /// <summary>
 /// A class for specifying spawn points for holdable objects
 /// </summary>
+[DisallowMultipleComponent]
 public class KMHoldableSpawnPoint : MonoBehaviour
 {
     /// <summary>

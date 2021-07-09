@@ -4,6 +4,7 @@ using System.Collections.Generic;
 /// <summary>
 /// Interface to directly execute actions related to the game or controlling game flow.
 /// </summary>
+[DisallowMultipleComponent]
 public class KMGameCommands : MonoBehaviour
 {
     /// <summary>

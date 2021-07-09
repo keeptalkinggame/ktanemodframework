@@ -3,6 +3,7 @@
 /// <summary>
 /// Add this component to create a highlight at runtime based on this object's renderer.
 /// </summary>
+[DisallowMultipleComponent]
 public class KMHighlightable : MonoBehaviour
 {
     /// <summary>

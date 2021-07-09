@@ -4,6 +4,7 @@ using System.Collections.Generic;
 /// <summary>
 /// Interface to get information about game and to get notified of game state changes.
 /// </summary>
+[DisallowMultipleComponent]
 public class KMGameInfo : MonoBehaviour
 {
     /// <summary>
