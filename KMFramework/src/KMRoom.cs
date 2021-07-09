@@ -4,7 +4,8 @@ using System.Collections.Generic;
 /// <summary>
 /// Generic room behaviour - use KMGameplayRoom or KMSetupRoom instead.
 /// </summary>
-public class KMRoom : MonoBehaviour
+[DisallowMultipleComponent]
+public abstract class KMRoom : MonoBehaviour
 {
     /// <summary>
     /// Transform to spawn the bomb at.

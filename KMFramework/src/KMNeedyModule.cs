@@ -3,6 +3,7 @@
 /// <summary>
 /// This class acts as a proxy for the game's needy bomb module. Don't subclass but instead add it as a component.
 /// </summary>
+[DisallowMultipleComponent]
 public class KMNeedyModule : MonoBehaviour
 {
     /// <summary>

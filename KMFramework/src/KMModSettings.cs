@@ -5,6 +5,7 @@ using UnityEngine;
 /// Useful for user-specific settings in a mod, such as configuring a Twitch account or anything else a user
 /// may tweak about a mod.
 /// </summary>
+[DisallowMultipleComponent]
 public class KMModSettings : MonoBehaviour
 {
     /// <summary>
