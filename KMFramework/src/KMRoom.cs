@@ -4,7 +4,6 @@ using System.Collections.Generic;
 /// <summary>
 /// Generic room behaviour - use KMGameplayRoom or KMSetupRoom instead.
 /// </summary>
-[DisallowMultipleComponent]
 public abstract class KMRoom : MonoBehaviour
 {
     /// <summary>
