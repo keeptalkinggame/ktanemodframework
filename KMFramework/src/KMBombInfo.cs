@@ -5,6 +5,7 @@ using System.Collections.Generic;
 /// Interface to information about the bomb and its widgets. 
 /// Add this component to a module to query properties of the bomb for use in rules.
 /// </summary>
+[HelpURL("https://github.com/Qkrisi/ktanemodkit/wiki/KMBombInfo")]
 [DisallowMultipleComponent]
 public class KMBombInfo : MonoBehaviour
 {

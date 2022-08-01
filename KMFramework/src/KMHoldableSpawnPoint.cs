@@ -4,6 +4,7 @@ using System.Collections;
 /// <summary>
 /// A class for specifying spawn points for holdable objects
 /// </summary>
+[HelpURL("https://github.com/Qkrisi/ktanemodkit/wiki/KMHoldableSpawnPoint")]
 [DisallowMultipleComponent]
 public class KMHoldableSpawnPoint : MonoBehaviour
 {

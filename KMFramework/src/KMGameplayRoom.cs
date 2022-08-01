@@ -4,6 +4,7 @@ using System.Collections.Generic;
 /// <summary>
 /// Add this component to a prefab to allow it to be used as a room during gameplay (i.e. bomb defusal).
 /// </summary>
+[HelpURL("https://github.com/Qkrisi/ktanemodkit/wiki/KMGameplayRoom")]
 [DisallowMultipleComponent]
 public class KMGameplayRoom : KMRoom
 {
