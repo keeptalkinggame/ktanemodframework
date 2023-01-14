@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 /// <summary>
 /// This class acts as a proxy for the game's needy bomb module. Don't subclass but instead add it as a component.
@@ -53,9 +54,10 @@ public class KMBombModule : MonoBehaviour
     }
 
     /// <summary>
-    /// Returns the random seed used to generate the rules for this game. Not currently used.
+    /// Returns the random seed used to generate the rules for this game. Not used by the game.
     /// </summary>
     /// <returns></returns>
+    [Obsolete("This method is not used by the game. To implement rule seed, use KMRuleSeedable.")]
     public int GetRuleGenerationSeed()
     {
         if (GetRuleGenerationSeedHandler != null)
