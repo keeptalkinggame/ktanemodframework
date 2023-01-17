@@ -5,6 +5,8 @@ using System.Collections.Generic;
 /// Component representing the bomb visual, including the faces upon which modules are placed as well
 /// as the areas for spawning widgets.
 /// </summary>
+[HelpURL("https://github.com/Qkrisi/ktanemodkit/wiki/KMBomb")]
+[DisallowMultipleComponent]
 public class KMBomb : MonoBehaviour
 {
     public List<KMBombFace> Faces;

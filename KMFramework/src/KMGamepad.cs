@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+[HelpURL("https://github.com/Qkrisi/ktanemodkit/wiki/KMGamepad")]
+[DisallowMultipleComponent]
 public class KMGamepad :MonoBehaviour
 {
     /// <summary>

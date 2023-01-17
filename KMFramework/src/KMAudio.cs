@@ -5,6 +5,8 @@ using UnityEngine;
 /// Component that provides an interface to the game's audio system. Allows playing of sounds in a way that will
 /// respect volume settings and gameplay events. Can be used to play existing sounds or sounds added in this mod.
 /// </summary>
+[HelpURL("https://github.com/Qkrisi/ktanemodkit/wiki/KMAudio")]
+[DisallowMultipleComponent]
 public class KMAudio : MonoBehaviour
 {
     public class KMAudioRef

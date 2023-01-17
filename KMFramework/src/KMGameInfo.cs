@@ -4,6 +4,8 @@ using System.Collections.Generic;
 /// <summary>
 /// Interface to get information about game and to get notified of game state changes.
 /// </summary>
+[HelpURL("https://github.com/Qkrisi/ktanemodkit/wiki/KMGameInfo")]
+[DisallowMultipleComponent]
 public class KMGameInfo : MonoBehaviour
 {
     /// <summary>

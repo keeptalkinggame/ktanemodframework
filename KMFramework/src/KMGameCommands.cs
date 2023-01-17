@@ -4,6 +4,8 @@ using System.Collections.Generic;
 /// <summary>
 /// Interface to directly execute actions related to the game or controlling game flow.
 /// </summary>
+[HelpURL("https://github.com/Qkrisi/ktanemodkit/wiki/KMGameCommands")]
+[DisallowMultipleComponent]
 public class KMGameCommands : MonoBehaviour
 {
     /// <summary>

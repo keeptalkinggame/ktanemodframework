@@ -5,6 +5,8 @@ using System;
 /// Interface to define a holdable object that can be picked up by motion controls
 /// Should add a rigidbody or a default one will be created
 /// </summary>
+[HelpURL("https://github.com/Qkrisi/ktanemodkit/wiki/KMHoldable")]
+[DisallowMultipleComponent]
 public class KMHoldable : MonoBehaviour
 {
     /// <summary>

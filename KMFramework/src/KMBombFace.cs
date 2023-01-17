@@ -4,6 +4,8 @@ using System.Collections.Generic;
 /// <summary>
 /// A collection of transforms where modules can be instantiated along with their backings.
 /// </summary>
+[HelpURL("https://github.com/Qkrisi/ktanemodkit/wiki/KMBombFace")]
+[DisallowMultipleComponent]
 public class KMBombFace : MonoBehaviour
 {
     /// <summary>

@@ -4,6 +4,7 @@ using UnityEngine;
 /// Add this component to a prefab to specify an AudioClip that should be played whenever the
 /// given sound effect is triggered instead of the original game's audio.
 /// </summary>
+[HelpURL("https://github.com/Qkrisi/ktanemodkit/wiki/KMSoundOverride")]
 public class KMSoundOverride : MonoBehaviour
 {
     public enum SoundEffect
